@@ -27,6 +27,7 @@ angular.module('math-demo.controllers', [])
 
   $scope.range = function(start, end, step) {
   	var arr = [];
+    if(step === 0) return arr;
   	for(var i=start; i<end; i+=step) {
   		arr.push(i);
   	}
