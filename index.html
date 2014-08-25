@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="math-demo">
+	<head>
+		<meta charset="UTF-8">
+		<title>Math demo app</title>
+		<link rel="stylesheet" href="bower_components/nvd3/nv.d3.css"/>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+	</head>
+	<body ng-controller="HomeController">
+		<div class="container">
+			<div class="page-header">
+				<h1>Math demo app</h1>
+			</div>
+			<form role="form">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="coefficient">Coefficient: </label>
+							<input type="number" id="coefficient" class="form-control" ng-model="coefficient" ng-change="updateData()">
+						</div>
+						<div class="form-group">
+							<label for="start">Interval start: </label>
+							<input type="number" id="start" class="form-control" ng-model="start" ng-change="updateData()">
+						</div>
+						<div class="form-group">
+							<label for="end">Interval end: </label>
+							<input type="number" id="end" class="form-control" ng-model="end" ng-change="updateData()">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="step">Step: </label>
+							<input type="number" id="step" class="form-control" ng-model="step" step="0.01" ng-change="updateData()">
+						</div>
+						<div class="form-group">
+							<label for="step">Offset: </label>
+							<input type="number" id="offset" class="form-control" ng-model="offset" ng-change="updateData()">
+						</div>
+					</div>
+				</div>
+			</form>
+			<br>
+			<div class="panel panel-default">
+			  <div class="panel-body">
+			    <b>Function: </b>y = {{(coefficient || 0)}} * sin(x) + ({{offset}})
+			  </div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<table class="table table-striped">
+						<thead>
+							<th>X</th>
+							<th>Value</th>
+						</thead>
+						<tbody>
+							<tr ng-repeat="i in range(start,end,step)">
+								<td>{{i}}</td>
+								<td>{{(coefficient || 0) * Math.sin(i) + offset}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-8">
+					<nvd3-line-chart
+			        data="chartData"
+			        showXAxis="true"
+			        showYAxis="false"
+			        tooltips="true"
+			        interactive="true"
+			        objectequality="true">
+			    </nvd3-line-chart>
+		    </div>
+		  </div>
+	  </div>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+		<script src="bower_components/d3/d3.js"></script>
+		<script src="bower_components/nvd3/nv.d3.js"></script>
+		<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+		<!--<script type="text/javascript" src="build/application.min.js"></script>-->
+		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/controllers.js"></script> 
+	</body>
+</html>
