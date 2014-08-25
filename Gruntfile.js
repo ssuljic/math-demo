@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		express: {
 		  all: {
 				options: {
-			    bases: [__dirname],
+			    bases: [__dirname + '/public'],
 			    port: 9000,
 			    hostname: "0.0.0.0",
 			    livereload: true
@@ -14,7 +14,8 @@ module.exports = function(grunt) {
 		},
 		watch: {
 		  all: {
-		    files: ['index.html', 'scripts/*.js'],
+		    files: ['public/index.html', 'public/scripts/*.js'],
+		    tasks: ['jshint', 'uglify'],
 		    options: {
 		      livereload: true
 		  	}
@@ -26,12 +27,17 @@ module.exports = function(grunt) {
 		  }
 		},
 		jshint: {
-			all: ['Gruntfile.js', 'scripts/**/*.js']
+			all: ['Gruntfile.js', 'public/scripts/**/*.js']
 		},
 		uglify: {
 			dist: {
 				files: {
-					'build/application.min.js': 'scripts/*.js'
+					'public/build/application.min.js': ['public/bower_components/angular/angular.min.js',
+																							'public/bower_components/angular-route/angular-route.min.js',
+																							'public/bower_components/d3/d3.js',
+																							'public/bower_components/nvd3/nv.d3.js',
+																							'public/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js',
+																							'public/scripts/*.js']
 				}
 			}
 		}
