@@ -19,7 +19,8 @@
     "d3": "~3.4.11",
     "nvd3": "~1.1.15-beta",
     "angularjs-nvd3-directives": "~0.0.7",
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "angular-mocks": "~1.2.23"
   },
   "dependencies": {
     "angular": "~1.2.22",
@@ -30,6 +31,7 @@
     "bootstrap": "~3.2.0"
   },
   "resolutions": {
-    "d3": "~3.3.13"
+    "d3": "~3.3.13",
+    "angular": "~1.2.22"
   }
 }

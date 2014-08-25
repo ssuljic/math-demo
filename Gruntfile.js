@@ -15,7 +15,6 @@ module.exports = function(grunt) {
 		watch: {
 		  all: {
 		    files: ['public/index.html', 'public/scripts/*.js'],
-		    tasks: ['jshint', 'uglify'],
 		    options: {
 		      livereload: true
 		  	}
@@ -40,6 +39,11 @@ module.exports = function(grunt) {
 																							'public/scripts/*.js']
 				}
 			}
+		},
+		karma: {
+		  unit: {
+		    configFile: 'test/karma.conf.js'
+		  }
 		}
 	});
 
@@ -51,5 +55,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.registerTask('default', ['uglify']);
+	grunt.loadNpmTasks('grunt-karma');
+	grunt.registerTask('build', ['karma', 'uglify']);
+	grunt.registerTask('test', ['karma']);
 };

@@ -1,5 +1,5 @@
-angular.module('math-demo', [
+angular.module('myApp', [
 	'ngRoute',
-  'math-demo.controllers',
+  'myApp.controllers',
   'nvd3ChartDirectives'
 ]);
