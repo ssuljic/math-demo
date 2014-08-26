@@ -16,6 +16,9 @@
     "karma-jasmine": "^0.1.5",
     "karma-mocha": "^0.1.9",
     "matchdep": "~0.3.0",
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+  },
+  "dependencies": {
+    "express": "~4.5.1"
   }
 }
