@@ -24,10 +24,10 @@ describe('myApp', function(){
     });
 
     describe('range', function() {
-      it('should return empty array when one of the arguments is undefined or the step is zero', function() {
-        expect(scope.range(undefined, 4, 1)).toEqual([ ]);
-        expect(scope.range(0, undefined, 1)).toEqual([ ]);
-        expect(scope.range(1, 4, undefined)).toEqual([ ]);
+      it('should return empty array when one of the arguments is null or the step is zero', function() {
+        expect(scope.range(null, 4, 1)).toEqual([ ]);
+        expect(scope.range(0, null, 1)).toEqual([ ]);
+        expect(scope.range(1, 4, null)).toEqual([ ]);
         expect(scope.range(1, 4, 0)).toEqual([ ]);
       });
     });

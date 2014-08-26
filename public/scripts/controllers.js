@@ -28,7 +28,7 @@ angular.module('myApp.controllers', [])
   $scope.range = function(start, end, step) {
   	var arr = [];
 
-    if(start === undefined || end === undefined || step === undefined || step === 0) return arr;
+    if(start === null || end === null || step === null || step === 0) return arr;
   	for(var i=start; i<end; i+=step) {
   		arr.push(i);
   	}
