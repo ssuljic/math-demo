@@ -31,11 +31,11 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'public/build/application.min.js': ['public/bower_components/angular/angular.min.js',
-																							'public/bower_components/angular-route/angular-route.min.js',
-																							'public/bower_components/d3/d3.js',
-																							'public/bower_components/nvd3/nv.d3.js',
-																							'public/bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js',
+					'public/build/application.min.js': ['public/libs/angular/angular.min.js',
+																							'public/libs/angular-route/angular-route.min.js',
+																							'public/libs/d3/d3.js',
+																							'public/libs/nvd3/nv.d3.js',
+																							'public/libs/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js',
 																							'public/scripts/*.js']
 				}
 			}
