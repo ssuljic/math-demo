@@ -35,15 +35,15 @@
 							<label for="step">Offset: </label>
 							<input type="number" id="offset" class="form-control" ng-model="offset" ng-change="updateData()">
 						</div>
+						<div class="panel panel-default">
+						  <div class="panel-body">
+						    <b>Function: </b>y = {{(coefficient || 0)}} * sin(x) + ({{offset}})
+						  </div>
+						</div>
 					</div>
 				</div>
 			</form>
 			<br>
-			<div class="panel panel-default">
-			  <div class="panel-body">
-			    <b>Function: </b>y = {{(coefficient || 0)}} * sin(x) + ({{offset}})
-			  </div>
-			</div>
 			<div class="row">
 				<div class="col-md-4">
 					<table class="table table-striped">
@@ -66,18 +66,12 @@
 			        showYAxis="false"
 			        tooltips="true"
 			        interactive="true"
-			        objectequality="true">
+			        objectequality="true"
+			        height="400">
 			    </nvd3-line-chart>
 		    </div>
 		  </div>
 	  </div>
 	 	<script type="text/javascript" src="build/js/application.min.js"></script>
-		<!--<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-		<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-		<script src="bower_components/d3/d3.js"></script>
-		<script src="bower_components/nvd3/nv.d3.js"></script>
-		<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
-		<script type="text/javascript" src="scripts/app.js"></script>
-		<script type="text/javascript" src="scripts/controllers.js"></script> -->
 	</body>
 </html>
