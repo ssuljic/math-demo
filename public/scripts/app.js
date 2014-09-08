@@ -1,5 +1,5 @@
 angular.module('myApp', [
-	'ngRoute',
+  'ngRoute',
   'myApp.controllers',
   'nvd3ChartDirectives'
 ]);
